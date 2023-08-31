@@ -24,7 +24,7 @@ class _PokeCardState extends State<PokeCard>{
   @override
   Widget build(BuildContext context) {
     Pokemon pokemon = widget.pokemon;
-    String pokeImage = _onShinyMode ? pokemon.shinyImage : pokemon.image;
+    String imageName = _onShinyMode ? '${pokemon.name.toLowerCase()}_shiny' : pokemon.name.toLowerCase();
 
     return SizedBox(
       height: 146,
@@ -59,7 +59,7 @@ class _PokeCardState extends State<PokeCard>{
                 ),
                 Flexible(
                   flex: 1,
-                  child: Image.network(fit: BoxFit.contain, pokeImage),
+                  child: Image.asset('assets/$imageName.png'),
                 ),
               ],
             ),

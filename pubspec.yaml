@@ -52,6 +52,27 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/charmander.png
+    - assets/charmander_shiny.png
+    - assets/chikorita.png
+    - assets/chikorita_shiny.png
+    - assets/cubone.png
+    - assets/cubone_shiny.png
+    - assets/cyndaquil.png
+    - assets/cyndaquil_shiny.png
+    - assets/meowth.png
+    - assets/meowth_shiny.png
+    - assets/mew.png
+    - assets/mew_shiny.png
+    - assets/oddish.png
+    - assets/oddish_shiny.png
+    - assets/poliwag.png
+    - assets/poliwag_shiny.png
+    - assets/shellder.png
+    - assets/shellder_shiny.png
+    - assets/squirtle.png
+    - assets/squirtle_shiny.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

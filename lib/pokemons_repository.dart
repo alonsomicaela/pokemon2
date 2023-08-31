@@ -6,63 +6,43 @@ class PokemonRepository {
     return [
       Pokemon(
         "Charmander",
-        "https://static.wikia.nocookie.net/espokemon/images/5/56/Charmander.png/revision/latest?cb=20221210013209",
         Colors.orangeAccent.shade100,
-        "https://i.pinimg.com/originals/9f/82/b9/9f82b94ac72356a7c51b95f241bce42b.png",
       ),
       Pokemon(
         "Chikorita",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/4/4e/latest/20230523204350/Chikorita.png/1200px-Chikorita.png",
         Colors.green.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defmiff-397d354c-92cf-4a4c-89d7-d074ff86a62e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmbWlmZi0zOTdkMzU0Yy05MmNmLTRhNGMtODlkNy1kMDc0ZmY4NmE2MmUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nVnbQZdfzUa7zNIFNOEWMCzBI60qPi38DJtNyI-Vz-s",
       ),
       Pokemon(
         "Squirtle",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/e/e3/latest/20160309230820/Squirtle.png/200px-Squirtle.png",
         Colors.indigo.shade100,
-        "https://i.pinimg.com/originals/a8/2f/dd/a82fdd740036970738de4f8a04568256.png",
       ),
       Pokemon(
         "Mew",
-        "https://static.wikia.nocookie.net/espokemon/images/b/bf/Mew.png/revision/latest/scale-to-width-down/350?cb=20160311010530",
         Colors.purple.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defi6f4-8c288149-f14b-42af-b10b-7cd713df4c38.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmaTZmNC04YzI4ODE0OS1mMTRiLTQyYWYtYjEwYi03Y2Q3MTNkZjRjMzgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GSGj03tRBxsTNhbNDRSIF-Bp1RptO9lsiou7CR2jeSc",
       ),
       Pokemon(
         "Meowth",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/9/99/latest/20160904210550/Meowth.png/200px-Meowth.png",
         Colors.amber.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defjjmn-8cb03c74-76eb-46fb-beac-bc95b8525706.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmamptbi04Y2IwM2M3NC03NmViLTQ2ZmItYmVhYy1iYzk1Yjg1MjU3MDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.19Yx3mwh64XzJaiVvTh4FIXYaXP88zmJbNDc1vcm6K8",
       ),
       Pokemon(
         "Oddish",
-        "https://static.wikia.nocookie.net/espokemon/images/d/d9/Oddish.png/revision/latest?cb=20080909113841",
         Colors.blueGrey.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defjeg3-7e14e32b-8315-4579-876b-d7a0a39e69b9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmamVnMy03ZTE0ZTMyYi04MzE1LTQ1NzktODc2Yi1kN2EwYTM5ZTY5YjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3Vq0pW4gaq_KsW8cQHHodCLjTGAIFC7qlgsZCUqSUQw",
       ),
       Pokemon(
         "Poliwag",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/9/90/latest/20230620061036/Poliwag.png/200px-Poliwag.png",
         Colors.blue.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defjss1-65b5f41f-887c-4443-86e5-9f8366f7e5aa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmanNzMS02NWI1ZjQxZi04ODdjLTQ0NDMtODZlNS05ZjgzNjZmN2U1YWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2dxRZ5vyysmIeBGL6dEMj-y-5Oy2Fc7px3qYpoQ9_As",
       ),
       Pokemon(
         "Cyndaquil",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/9/99/latest/20200307021608/Cyndaquil.png/200px-Cyndaquil.png",
         Colors.orange.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defmjl1-9c68d559-a697-429b-9059-74f98fb8299b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmbWpsMS05YzY4ZDU1OS1hNjk3LTQyOWItOTA1OS03NGY5OGZiODI5OWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.pYPu-8pBEVwvCheQ9TJwA_vbX1Q-Cl9a6xS-fSFghCw",
       ),
       Pokemon(
         "Cubone",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/6/65/latest/20230716212229/Cubone.png/200px-Cubone.png",
         Colors.brown.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/deflh8f-b6bbe345-22e8-4810-9efe-2775447cc649.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdmN2M1OTRiLTQxMzEtNGE0Ni1hOTQ3LTdmNTFjOGFhZmIyOVwvZGVmbGg4Zi1iNmJiZTM0NS0yMmU4LTQ4MTAtOWVmZS0yNzc1NDQ3Y2M2NDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3n-uOrbWnDriiR-I9nKaDJSnEOwTiJ6eGluxDnH9_L4",
       ),
       Pokemon(
         "Shellder",
-        "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/6/63/latest/20200720120325/Shellder.png/200px-Shellder.png",
         Colors.pink.shade100,
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f7c594b-4131-4a46-a947-7f51c8aafb29/defkhp8-e565216c-26c7-4598-b2d3-65b9c13e3351.png/v1/fill/w_841,h_841/_090_shiny_shellder_by_exoticpoke_defkhp8-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODQxIiwicGF0aCI6IlwvZlwvN2Y3YzU5NGItNDEzMS00YTQ2LWE5NDctN2Y1MWM4YWFmYjI5XC9kZWZraHA4LWU1NjUyMTZjLTI2YzctNDU5OC1iMmQzLTY1YjljMTNlMzM1MS5wbmciLCJ3aWR0aCI6Ijw9ODQxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.8rCb5dJxGiCplKS8cJwyyLNTiUsG9yNP-lpuJ0eZal0",
       ),
     ];
   }
