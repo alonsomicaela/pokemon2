@@ -27,11 +27,20 @@ class _ReorderablePokeListState
 
   @override
   Widget build(BuildContext context) {
+    void replacePokemon(currentPokemon, newPokemon) {
+      setState(() {
+        final currentPokemonIndex = _pokemons.indexOf(currentPokemon);
+
+        _pokemons.remove(currentPokemon);
+        _pokemons.insert(currentPokemonIndex, newPokemon);
+      });
+    }
+
     return ReorderableListView(
       scrollDirection: widget.scrollDirection,
       children: <Widget>[
         for (Pokemon pokemon in _pokemons)
-          PokeCard(key: Key(pokemon.name), pokemon: pokemon)
+          PokeCard(key: Key(pokemon.name), pokemon: pokemon, replacePokemon: replacePokemon,)
       ],
       onReorder: (int oldIndex, int newIndex) {
         setState(() {
@@ -39,8 +48,8 @@ class _ReorderablePokeListState
             newIndex -= 1;
           }
 
-          final PokeCard pokeCard = _pokemons.removeAt(oldIndex);
-          _pokemons.insert(newIndex, pokeCard);
+          final Pokemon pokemon = _pokemons.removeAt(oldIndex);
+          _pokemons.insert(newIndex, pokemon);
         });
       },
     );

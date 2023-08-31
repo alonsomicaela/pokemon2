@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pokemon2/pokemon.dart';
 
 class PokeCard extends StatefulWidget {
-  const PokeCard({super.key, required this.pokemon,});
+  const PokeCard({super.key, required this.pokemon, required this.replacePokemon});
 
   final Pokemon pokemon;
+  final Function replacePokemon;
 
   @override
   State<StatefulWidget> createState() =>
@@ -33,6 +34,11 @@ class _PokeCardState extends State<PokeCard>{
         onTap: () {
           setState(() {
             _onShinyMode = !_onShinyMode;
+          });
+        },
+        onDoubleTap: () {
+          setState(() {
+            widget.replacePokemon(pokemon, pokemon.evolution);
           });
         },
         child: Card(
