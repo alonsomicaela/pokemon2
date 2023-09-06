@@ -1,57 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemon2/widgets/poke_card.dart';
 import 'package:pokemon2/model/pokemon.dart';
 import 'package:pokemon2/repositories/pokemons_repository.dart';
 
-class ReorderablePokeList extends StatefulWidget {
+class ReorderablePokeList extends ConsumerStatefulWidget {
   const ReorderablePokeList({super.key, required this.scrollDirection});
 
   final Axis scrollDirection;
 
   @override
-  State<ReorderablePokeList> createState() =>
-      _ReorderablePokeListState();
+  ReorderablePokeListState createState() =>
+      ReorderablePokeListState();
 }
 
-class _ReorderablePokeListState
-    extends State<ReorderablePokeList> {
-
-  var _pokemons;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _pokemons = PokemonRepository.top10Pokemons();
-  }
+class ReorderablePokeListState
+    extends ConsumerState<ReorderablePokeList> {
 
   @override
   Widget build(BuildContext context) {
-    void replacePokemon(currentPokemon, newPokemon) {
-      setState(() {
-        final currentPokemonIndex = _pokemons.indexOf(currentPokemon);
+    final pokemons = ref.watch(pokemonsListProvider);
 
-        _pokemons.remove(currentPokemon);
-        _pokemons.insert(currentPokemonIndex, newPokemon);
+    void replacePokemon(currentPokemon, newPokemon) {
+      ref.read(pokemonsListProvider.notifier).update((state) {
+        final replacedPokeList = List<Pokemon>.from(pokemons);
+        final currentPokemonIndex = replacedPokeList.indexOf(currentPokemon);
+
+        replacedPokeList.remove(currentPokemon);
+        replacedPokeList.insert(currentPokemonIndex, newPokemon);
+        state = replacedPokeList;
+
+        return state;
       });
     }
 
     return ReorderableListView(
       scrollDirection: widget.scrollDirection,
       children: <Widget>[
-        for (Pokemon pokemon in _pokemons)
+        for (Pokemon pokemon in pokemons)
           PokeCard(key: Key(pokemon.name), pokemon: pokemon, replacePokemon: replacePokemon,)
       ],
       onReorder: (int oldIndex, int newIndex) {
-        setState(() {
+        ref.read(pokemonsListProvider.notifier).update((state) {
           if (oldIndex < newIndex) {
             newIndex -= 1;
           }
 
-          final Pokemon pokemon = _pokemons.removeAt(oldIndex);
-          _pokemons.insert(newIndex, pokemon);
+          final reorderedPokeList = List<Pokemon>.from(pokemons);
+          Pokemon pokemon = reorderedPokeList.removeAt(oldIndex);
+          reorderedPokeList.insert(newIndex, pokemon);
+
+          state = reorderedPokeList;
+          return state;
         });
       },
     );
   }
 }
+
+final pokemonsListProvider = StateProvider<List<Pokemon>>((ref) => PokemonRepository.top10Pokemons());
