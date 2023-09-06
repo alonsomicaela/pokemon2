@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon2/pokemon.dart';
+import 'package:pokemon2/model/pokemon.dart';
 
 class PokemonRepository {
   static List<Pokemon> top10Pokemons() {

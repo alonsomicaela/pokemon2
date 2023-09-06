@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon2/poke_card.dart';
-import 'package:pokemon2/pokemon.dart';
-import 'package:pokemon2/pokemons_repository.dart';
+import 'package:pokemon2/widgets/poke_card.dart';
+import 'package:pokemon2/model/pokemon.dart';
+import 'package:pokemon2/repositories/pokemons_repository.dart';
 
 class ReorderablePokeList extends StatefulWidget {
   const ReorderablePokeList({super.key, required this.scrollDirection});
