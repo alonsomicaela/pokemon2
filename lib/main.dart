@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemon2/reordable_poke_list.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -54,38 +55,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends ConsumerStatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final Map<Axis, List<Icon>> _scrollDirectionMap = {
-    Axis.vertical: [
-      const Icon(Icons.keyboard_arrow_left),
-      const Icon(Icons.keyboard_arrow_right),
-    ],
-    Axis.horizontal: [
-      const Icon(Icons.keyboard_arrow_up),
-      const Icon(Icons.keyboard_arrow_down),
-    ]
-  };
-  
-  var _scrollDirection;
-  
-  @override
-  void initState() {
-    super.initState();
-
-    _scrollDirection = Axis.vertical;
-  }
-
+class MyHomePageState extends ConsumerState<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    Axis scrollDirection = ref.read(scrollDirectionProvider);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -100,20 +83,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: FractionallySizedBox(
-          heightFactor: _scrollDirection == Axis.vertical ? 0.8 : 0.5,
+          heightFactor: scrollDirection == Axis.vertical ? 0.8 : 0.5,
           widthFactor: 0.7,
-          child: ReorderablePokeList(scrollDirection: _scrollDirection),
+          child: ReorderablePokeList(scrollDirection: scrollDirection),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: getIconsToChangeDirection(_scrollDirection),
+          children: getIconsToChangeDirection(scrollDirection),
         ),
         onPressed: () {
           setState(() {
             Axis newScrollDirection = getNewScrollDirection();
-            _scrollDirection = newScrollDirection;
+            ref.read(scrollDirectionProvider.notifier).update((state) => state = newScrollDirection);
           });
         },
       ),
@@ -121,11 +104,25 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Axis getNewScrollDirection() {
-    return _scrollDirection == Axis.vertical ? Axis.horizontal : Axis.vertical;
+    return ref.read(scrollDirectionProvider) == Axis.vertical ? Axis.horizontal : Axis.vertical;
   }
 
   List<Icon> getIconsToChangeDirection(Axis scrollDirection) {
-    return _scrollDirectionMap[scrollDirection]!;
+    return ref.read(scrollDirectionAndIconsMapProvider)[scrollDirection]!;
   }
-
 }
+
+final scrollDirectionProvider = StateProvider<Axis>((ref) => Axis.vertical);
+
+final scrollDirectionAndIconsMapProvider = Provider<Map<Axis, List<Icon>>>((ref) {
+  return  {
+    Axis.vertical: [
+      const Icon(Icons.keyboard_arrow_left),
+      const Icon(Icons.keyboard_arrow_right),
+    ],
+    Axis.horizontal: [
+      const Icon(Icons.keyboard_arrow_up),
+      const Icon(Icons.keyboard_arrow_down),
+    ]
+  };
+});
