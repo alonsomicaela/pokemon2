@@ -56,10 +56,14 @@ flutter:
   assets:
     - assets/bayleef.png
     - assets/bayleef_shiny.png
+    - assets/blastoise.png
+    - assets/blastoise_shiny.png
     - assets/charmander.png
     - assets/charmander_shiny.png
     - assets/charmeleon.png
     - assets/charmeleon_shiny.png
+    - assets/charizard.png
+    - assets/charizard_shiny.png
     - assets/chikorita.png
     - assets/chikorita_shiny.png
     - assets/cloyster.png
@@ -72,6 +76,8 @@ flutter:
     - assets/gloom_shiny.png
     - assets/marowak.png
     - assets/marowak_shiny.png
+    - assets/meganium.png
+    - assets/meganium_shiny.png
     - assets/meowth.png
     - assets/meowth_shiny.png
     - assets/mew.png
@@ -84,12 +90,18 @@ flutter:
     - assets/poliwag_shiny.png
     - assets/poliwhirl.png
     - assets/poliwhirl_shiny.png
+    - assets/poliwrath.png
+    - assets/poliwrath_shiny.png
     - assets/quilava.png
-    - - assets/quilava_shiny.png
+    - assets/quilava_shiny.png
     - assets/shellder.png
     - assets/shellder_shiny.png
     - assets/squirtle.png
     - assets/squirtle_shiny.png
+    - assets/typhlosion.png
+    - assets/typhlosion_shiny.png
+    - assets/vileplume.png
+    - assets/vileplume_shiny.png
     - assets/wartortle.png
     - assets/wartortle_shiny.png
 
