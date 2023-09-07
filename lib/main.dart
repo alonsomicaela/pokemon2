@@ -21,16 +21,26 @@ class MyApp extends StatelessWidget {
           primary: Colors.yellow,
           onPrimary: Colors.blue.shade900,
         ),
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
+        textTheme: TextTheme(
+          titleLarge: const TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'SourceSansPro',
           ),
-          labelLarge: TextStyle(
+          titleMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'SourceSansPro',
+            color: Colors.red.shade900,
+          ),
+          labelLarge: const TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'SourceSansPro',
             color: Colors.black,
           ),
+          labelMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'SourceSansPro',
+            color: Colors.blue.shade900,
+          )
         ),
       ),
       theme: ThemeData(

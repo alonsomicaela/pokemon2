@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon2/model/pokemon.dart';
+import 'package:pokemon2/widgets/no_evolution_alert_dialog.dart';
 
 class PokeCard extends StatefulWidget {
   const PokeCard({super.key, required this.pokemon, required this.replacePokemon});
@@ -38,7 +39,14 @@ class _PokeCardState extends State<PokeCard>{
         },
         onDoubleTap: () {
           setState(() {
-            widget.replacePokemon(pokemon, pokemon.evolution);
+            if(pokemon.hasEvolution()) {
+              widget.replacePokemon(pokemon, pokemon.evolution);
+            } else {
+              showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => NoEvolutionDialog(pokemon: pokemon,),
+              );
+            }
           });
         },
         child: Card(
