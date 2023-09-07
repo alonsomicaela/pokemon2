@@ -4,79 +4,63 @@ import 'package:pokemon2/model/pokemon.dart';
 class PokemonRepository {
   static List<Pokemon> top10Pokemons() {
     return [
-      Pokemon(
+      const Pokemon(
         "Charmander",
-        Colors.orangeAccent.shade100,
         Pokemon (
             "Charmeleon",
-            Colors.orangeAccent.shade400,
-            Pokemon("Charizard", Colors.orangeAccent.shade700, null),
+            Pokemon("Charizard", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Chikorita",
-        Colors.green.shade100,
         Pokemon (
             "Bayleef",
-            Colors.green.shade400,
-            Pokemon("Meganium", Colors.green.shade700, null),
+            Pokemon("Meganium", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Squirtle",
-        Colors.indigo.shade100,
         Pokemon (
             "Wartortle",
-            Colors.indigo.shade400,
-            Pokemon("Blastoise", Colors.indigo.shade700, null),
+            Pokemon("Blastoise", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Mew",
-        Colors.purple.shade100,
         null,
       ),
-      Pokemon(
+      const Pokemon(
         "Meowth",
-        Colors.amber.shade100,
-        Pokemon ("Persian", Colors.amber.shade400, null),
+        Pokemon ("Persian", null),
       ),
-      Pokemon(
+      const Pokemon(
         "Oddish",
-        Colors.blueGrey.shade100,
         Pokemon (
             "Gloom",
-            Colors.blueGrey.shade400,
-            Pokemon("Vileplume", Colors.blueGrey.shade700, null),
+            Pokemon("Vileplume", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Poliwag",
-        Colors.blue.shade100,
         Pokemon (
             "Poliwhirl",
-            Colors.blue.shade400,
-            Pokemon("Poliwrath", Colors.blue.shade700, null),
+            Pokemon("Poliwrath", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Cyndaquil",
-        Colors.orange.shade100,
         Pokemon (
             "Quilava",
-            Colors.orange.shade400,
-            Pokemon("Typhlosion", Colors.orange.shade700, null),
+            Pokemon("Typhlosion", null),
         ),
       ),
-      Pokemon(
+      const Pokemon(
         "Cubone",
-        Colors.brown.shade100,
-        Pokemon ("Marowak", Colors.brown.shade400, null),
+        Pokemon ("Marowak", null),
       ),
-      Pokemon(
+      const Pokemon(
         "Shellder",
-        Colors.pink.shade100,
-        Pokemon ("Cloyster", Colors.pink.shade200, null),
+        Pokemon ("Cloyster", null),
       ),
     ];
   }

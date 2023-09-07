@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon2/model/pokemon.dart';
+import 'package:pokemon2/repositories/colors_repository.dart';
 import 'package:pokemon2/widgets/no_evolution_alert_dialog.dart';
 
 class PokeCard extends StatefulWidget {
@@ -15,6 +16,7 @@ class PokeCard extends StatefulWidget {
 
 class _PokeCardState extends State<PokeCard>{
   var _onShinyMode;
+  var pokemonsColors;
 
   @override
   void initState() {
@@ -52,13 +54,13 @@ class _PokeCardState extends State<PokeCard>{
         child: Card(
           shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: const Color(0x99d4af37),
+              color: ColorsRepository.getShinyColorFor(pokemon),
               width: _onShinyMode ? 5.0 : 0,
             ),
             borderRadius: BorderRadius.circular(20.0),
           ),
           elevation: 10,
-          color: pokemon.color,
+          color: ColorsRepository.getColorForPokemon(pokemon),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Row(
