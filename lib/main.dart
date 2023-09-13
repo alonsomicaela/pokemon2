@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemon2/providers.dart';
+import 'package:pokemon2/repositories/pokemons_repository.dart';
 import 'package:pokemon2/widgets/reordable_poke_list.dart';
 
 void main() {
@@ -99,17 +100,30 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
           child: ReorderablePokeList(scrollDirection: scrollDirection),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: getIconsToChangeDirection(scrollDirection),
-        ),
-        onPressed: () {
-          setState(() {
-            Axis newScrollDirection = getNewScrollDirection();
-            ref.read(scrollDirectionProvider.notifier).update((state) => state = newScrollDirection);
-          });
-        },
+      floatingActionButton: Wrap(
+        spacing: 250.0,
+        children: [
+          FloatingActionButton(
+            child: const Icon(Icons.refresh),
+            onPressed: () {
+              ref.read(pokemonsListProvider.notifier).update((state) {
+                return state = PokemonRepository.top10Pokemons();
+              });
+            },
+          ),
+          FloatingActionButton(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: getIconsToChangeDirection(scrollDirection),
+            ),
+            onPressed: () {
+              setState(() {
+                Axis newScrollDirection = getNewScrollDirection();
+                ref.read(scrollDirectionProvider.notifier).update((state) => state = newScrollDirection);
+              });
+            },
+          ),
+        ],
       ),
     );
   }
