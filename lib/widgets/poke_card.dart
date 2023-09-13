@@ -52,15 +52,8 @@ class _PokeCardState extends State<PokeCard>{
           });
         },
         child: Card(
-          shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: ColorsRepository.getShinyColorFor(pokemon),
-              width: _onShinyMode ? 5.0 : 0,
-            ),
-            borderRadius: BorderRadius.circular(20.0),
-          ),
           elevation: 10,
-          color: ColorsRepository.getColorForPokemon(pokemon),
+          color: ColorsRepository.getColorForPokemon(pokemon, _onShinyMode),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Row(
