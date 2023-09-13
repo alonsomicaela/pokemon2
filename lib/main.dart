@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pokemon2/providers.dart';
 import 'package:pokemon2/widgets/reordable_poke_list.dart';
 
 void main() {
@@ -121,18 +122,3 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
     return ref.read(scrollDirectionAndIconsMapProvider)[scrollDirection]!;
   }
 }
-
-final scrollDirectionProvider = StateProvider<Axis>((ref) => Axis.vertical);
-
-final scrollDirectionAndIconsMapProvider = Provider<Map<Axis, List<Icon>>>((ref) {
-  return  {
-    Axis.vertical: [
-      const Icon(Icons.keyboard_arrow_left),
-      const Icon(Icons.keyboard_arrow_right),
-    ],
-    Axis.horizontal: [
-      const Icon(Icons.keyboard_arrow_up),
-      const Icon(Icons.keyboard_arrow_down),
-    ]
-  };
-});

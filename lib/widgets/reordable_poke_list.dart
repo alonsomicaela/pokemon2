@@ -4,6 +4,8 @@ import 'package:pokemon2/widgets/poke_card.dart';
 import 'package:pokemon2/model/pokemon.dart';
 import 'package:pokemon2/repositories/pokemons_repository.dart';
 
+import '../providers.dart';
+
 class ReorderablePokeList extends ConsumerStatefulWidget {
   const ReorderablePokeList({super.key, required this.scrollDirection});
 
@@ -57,5 +59,3 @@ class ReorderablePokeListState
     );
   }
 }
-
-final pokemonsListProvider = StateProvider<List<Pokemon>>((ref) => PokemonRepository.top10Pokemons());

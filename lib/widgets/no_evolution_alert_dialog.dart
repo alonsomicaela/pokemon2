@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:pokemon2/model/pokemon.dart';
 
 class NoEvolutionDialog extends StatelessWidget {
-  const NoEvolutionDialog({super.key, required this.pokemon});
+  const NoEvolutionDialog({
+    super.key,
+    required this.pokemon,
+    required this.goBackToLevel0Pokemon,
+  });
 
   final Pokemon pokemon;
+  final Function goBackToLevel0Pokemon;
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +26,13 @@ class NoEvolutionDialog extends StatelessWidget {
         TextButton(
           onPressed: () => Navigator.pop(context, 'OK'),
           child: const Text('OK'),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context, 'OK');
+            goBackToLevel0Pokemon();
+          },
+          child: const Text('Volver al nivel 0'),
         ),
       ],
     );

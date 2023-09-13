@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon2/model/pokemon.dart';
 import 'package:pokemon2/repositories/colors_repository.dart';
+import 'package:pokemon2/repositories/pokemons_repository.dart';
 import 'package:pokemon2/widgets/no_evolution_alert_dialog.dart';
 
 class PokeCard extends StatefulWidget {
@@ -28,7 +29,15 @@ class _PokeCardState extends State<PokeCard>{
   @override
   Widget build(BuildContext context) {
     Pokemon pokemon = widget.pokemon;
-    String imageName = _onShinyMode ? '${pokemon.name.toLowerCase()}_shiny' : pokemon.name.toLowerCase();
+    String imageName = _onShinyMode
+        ? '${pokemon.name.toLowerCase()}_shiny'
+        : pokemon.name.toLowerCase();
+
+    void goBackToLevel0Pokemon() {
+      setState(() {
+        widget.replacePokemon(pokemon, PokemonRepository.getLevel0For(pokemon));
+      });
+    }
 
     return SizedBox(
       height: 146,
@@ -46,7 +55,10 @@ class _PokeCardState extends State<PokeCard>{
             } else {
               showDialog<String>(
                   context: context,
-                  builder: (BuildContext context) => NoEvolutionDialog(pokemon: pokemon,),
+                  builder: (BuildContext context) => NoEvolutionDialog(
+                    pokemon: pokemon,
+                    goBackToLevel0Pokemon: goBackToLevel0Pokemon,
+                  ),
               );
             }
           });
